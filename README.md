@@ -31,3 +31,8 @@ Repository to hold my Mac OS X configurations.
    ```shell
    $make install
    ```
+
+1. Configure iterm2
+
+   1. Refer [here](https://stackoverflow.com/a/23356086) (or)
+   2. `cp iterm/com.googlecode.iterm2.plist $HOME/Library/Preferences`

@@ -1,7 +1,7 @@
 .PHONY: all
 all: help
 
-IGNORE_LIST=-E homebrew
+IGNORE_LIST=-E homebrew -E iterm
 IGNORE_EXTN=--ignore=".tmpl"
 
 help: ## Prints help for targets with comments
