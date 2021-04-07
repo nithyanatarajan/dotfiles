@@ -21,3 +21,9 @@ update: ## Re-wireup all dotfiles using stow
 tmuxc: ## Configure tmux
 	stow --dir=tmux --target=${HOME} --verbose --ignore=".git[^\s]+" --ignore=".local" .tmux
 	stow --verbose tmux_local
+
+vim: ## Setup spacevim
+	curl -sLf https://spacevim.org/install.sh | bash
+
+vimu: ## Remove spacevim
+	curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
