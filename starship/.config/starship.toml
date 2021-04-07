@@ -1,0 +1,88 @@
+# Replace the "❯" symbol in the prompt with "→"
+[character]      # The name of the module we are configuring is "character"
+symbol = "→"     # The "symbol" segment is being set to "→"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[aws]
+symbol = " "
+disabled = false
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[directory]
+truncation_length = 1
+use_logical_path = true
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+truncation_symbol = ""
+
+[git_status]
+conflicted = " 🏳"
+conflicted_count.enabled = true
+ahead = "↑"
+behind = "↓"
+untracked = "?"
+untracked_count.enabled = true
+stashed = "📦"
+stashed_count.enabled = true
+modified = "📝"
+modified_count.enabled = true
+staged = "S"
+staged_count.enabled = true
+renamed = ">>"
+renamed_count.enabled = true
+deleted = "✗"
+deleted_count.enabled = true
+show_sync_count = true
+#prefix = ""
+#suffix = " "
+style = "dimmed red"
+
+[hostname]
+style = "blue"
+ssh_only = false
+disabled = false
+
+[kubernetes]
+symbol = "⛵ "
+style = "purple"
+disabled = false
+
+[terraform]
+disabled = false
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "

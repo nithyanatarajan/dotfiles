@@ -1,0 +1,20 @@
+[user]
+	email = nithyanatarajn@gmail.com
+	name = Nithya Natarajan
+	signingkey = $GPGKey
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[includeIf "gitdir:~/Projects/$PROJECT_GIT/"]
+	path = ~/Projects/$PROJECT_GIT/.gitconfig
+[init]
+	templatedir = ~/.git-template
+	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = true

@@ -1,0 +1,11 @@
+alias gst="git status"
+alias gco="git checkout"
+alias gpr="git pull --rebase"
+alias godir='cd $(fd --type d --max-depth 5 . $HOME/Projects | fzf --ansi --height 10)'
+alias kc='kubectl config current-context'
+alias utils="kubectl run -it --image arunvelsriram/utils --generator=run-pod/v1 utils -- bash"
+alias dir='cd $(fd --type d | sk)'
+alias cat=bat
+alias tf=terraform
+alias ls='ls -G'
+alias ga='ls | xargs -I{} git -C {}'

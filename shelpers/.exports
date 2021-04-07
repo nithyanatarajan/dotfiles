@@ -1,0 +1,41 @@
+# Android path
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export ANDROID_SDK=${ANDROID_HOME}/tools/bin
+export ANDROID_PLATFORM=${ANDROID_HOME}/platform-tools/
+export PATH="$PATH:${ANDROID_HOME}/tools:${ANDROID_PLATFORM}:${ANDROID_SDK}"
+alias emulator=${ANDROID_HOME}/emulator/emulator
+
+# flutter
+export PATH="$HOME/flutter/bin:$PATH"
+
+# tmuxp binaries
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+# go
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+# cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# gcloud
+export PATH="$PATH:$HOME/google-cloud-sdk/bin/"
+
+# enable krew
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
+#export EDITOR=nvim
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export JAVA_HOME="$(jenv prefix)"
+
+# docker-machine
+# eval $(docker-machine env default)
+
+#sqlite
+export PATH="/usr/local/opt/sqlite/bin:$PATH"

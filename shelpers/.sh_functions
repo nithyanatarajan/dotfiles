@@ -1,0 +1,15 @@
+function tmux-kill-all {
+    tmux list-sessions | rg -v attached | awk '{print $1}' | sed 's/://g' | xargs -I {} tmux kill-session -t {}
+}
+
+function kubeswitch {
+    fd .  -t f -e yaml ~/.tmuxp --exec echo {/.} | fzf --bind 'enter:execute-silent(tmuxp load --yes {1})+abort'
+}
+
+function ips {
+    ifconfig | rg "inet " | rg -Fv 127.0.0.1 | awk '{print $2}'
+}
+
+function ds {
+    find . -name ".DS_Store"
+}
