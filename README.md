@@ -36,3 +36,11 @@ Repository to hold my Mac OS X configurations.
 
    1. Refer [here](https://stackoverflow.com/a/23356086) (or)
    2. `cp iterm/com.googlecode.iterm2.plist $HOME/Library/Preferences`
+
+1. Configure [tmux](https://github.com/gpakosz/.tmux)
+
+   ```shell
+   $git submodule init
+   $git submodule update
+   $make tmuxc
+   ```

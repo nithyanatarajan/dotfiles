@@ -1,7 +1,7 @@
 .PHONY: all
 all: help
 
-IGNORE_LIST=-E homebrew -E iterm
+IGNORE_LIST=-E homebrew -E iterm -E tmux -E tmux_local
 IGNORE_EXTN=--ignore=".tmpl"
 
 help: ## Prints help for targets with comments
@@ -17,3 +17,7 @@ install: ## Wireup all dotfiles using stow
 update: ## Re-wireup all dotfiles using stow
 	fd --type d . --max-depth 1 $(IGNORE_LIST) | xargs -I {} stow $(IGNORE_EXTN) --verbose -R {}
 	@echo "🚀🚀🚀 Successfully relinked all the dot-files, enjoy 👏👏👏"
+
+tmuxc: ## Configure tmux
+	stow --dir=tmux --target=${HOME} --verbose --ignore=".git[^\s]+" --ignore=".local" .tmux
+	stow --verbose tmux_local
