@@ -1,0 +1,6 @@
+session_name: kind
+windows:
+- window_name: default
+  panes: []
+environment:
+  KUBECONFIG: $HOME/.kube/configs/kind.conf

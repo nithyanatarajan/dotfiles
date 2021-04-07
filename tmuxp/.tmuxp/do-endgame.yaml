@@ -1,0 +1,8 @@
+session_name: do-endgame
+windows:
+- window_name: default
+  panes: []
+environment:
+  KUBECONFIG: $HOME/.kube/configs/nnithya-k8s.conf
+  DIGITALOCEAN_CONTEXT: endgame
+
