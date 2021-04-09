@@ -13,3 +13,15 @@ function ips {
 function ds {
     find . -name ".DS_Store"
 }
+
+function ap {
+    networksetup -setautoproxystate Wi-Fi $1
+}
+
+function wp {
+    networksetup -setwebproxystate Wi-Fi $1
+}
+
+function wps {
+    networksetup -setsecurewebproxystate Wi-Fi $1
+}
