@@ -44,3 +44,9 @@ Repository to hold my Mac OS X configurations.
    $git submodule update
    $make tmuxc
    ```
+
+1. Other apps
+   1. [meeter](https://trymeeter.com/)
+   2. [clocker](https://github.com/n0shake/Clocker)
+   3. [hidden bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
+   4. [fanny](https://github.com/DanielStormApps/Fanny)
