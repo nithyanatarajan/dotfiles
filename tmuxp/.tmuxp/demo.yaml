@@ -1,6 +1,0 @@
-session_name: local-kubernetes
-windows:
-- window_name: default
-  panes: []
-environment:
-  KUBECONFIG: $HOME/.k3d/kubeconfig-demo.yaml
