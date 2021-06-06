@@ -1,8 +1,7 @@
 # Replace the "❯" symbol in the prompt with "→"
 [character]      # The name of the module we are configuring is "character"
-symbol = "→"     # The "symbol" segment is being set to "→"
+success_symbol = "→"     # The "symbol" segment is being set to "→"
 error_symbol = "✗"
-use_symbol_for_status = true
 
 [aws]
 symbol = " "
@@ -23,23 +22,15 @@ symbol = " "
 truncation_symbol = ""
 
 [git_status]
-conflicted = " 🏳"
-conflicted_count.enabled = true
+conflicted = "🏳${count}"
 ahead = "↑"
 behind = "↓"
-untracked = "?"
-untracked_count.enabled = true
-stashed = "📦"
-stashed_count.enabled = true
-modified = "📝"
-modified_count.enabled = true
-staged = "S"
-staged_count.enabled = true
-renamed = ">>"
-renamed_count.enabled = true
-deleted = "✗"
-deleted_count.enabled = true
-show_sync_count = true
+untracked = "?${count}"
+stashed = "📦${count}"
+modified = "📝${count}"
+staged = "S${count}"
+renamed = ">>${count}"
+deleted = "✗${count}"
 #prefix = ""
 #suffix = " "
 style = "dimmed red"
