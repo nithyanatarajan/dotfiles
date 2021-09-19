@@ -25,3 +25,9 @@ function wp {
 function wps {
     networksetup -setsecurewebproxystate Wi-Fi $1
 }
+
+function jdkset {
+    version=$1
+    export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    java -version
+}
