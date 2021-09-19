@@ -1,12 +1,10 @@
 # Android path
-# Refer https://developer.android.com/studio/command-line
 export ANDROID_HOME=${HOME}/Library/Android/sdk
-export ANDROID_PLATFORM=${ANDROID_HOME}/platform-tools
-export PATH="$PATH:${ANDROID_PLATFORM}"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias emulator=${ANDROID_HOME}/emulator/emulator
-
-# flutter
-export PATH="$HOME/flutter/bin:$PATH"
 
 # tmuxp binaries
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
@@ -16,26 +14,30 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-# cargo
-export PATH="$PATH:$HOME/.cargo/bin"
+# sqlite
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # gcloud
+if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" ]]; then
 export PATH="$PATH:$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
-
-# enable krew
-export PATH="${PATH}:${HOME}/.krew/bin"
-
-export PATH="/usr/local/sbin:$PATH"
-export GPG_TTY=$(tty)
-#export EDITOR=nvim
+fi
 
 # jenv
+if [[ -d "$HOME/.jenv/bin" ]]; then
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME="$(jenv prefix)"
+fi
+
+# nvm
+if [[ -d "$HOME/.nvm" ]]; then
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+fi
 
 # docker-machine
 # eval $(docker-machine env default)
 
-#sqlite
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
+#export EDITOR=nvim
