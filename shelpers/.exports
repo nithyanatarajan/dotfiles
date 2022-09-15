@@ -6,6 +6,9 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias emulator=${ANDROID_HOME}/emulator/emulator
 
+#python3
+export PATH="$PATH:/usr/local/opt/python@3.9/libexec/bin"
+
 # tmuxp binaries
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
@@ -13,6 +16,10 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+# gem
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
 
 # sqlite
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
