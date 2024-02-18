@@ -48,3 +48,5 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 #export EDITOR=nvim
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
