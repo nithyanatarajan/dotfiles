@@ -10,10 +10,14 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias emulator=${ANDROID_HOME}/emulator/emulator
 
 #python3
-export PATH="$PATH:/usr/local/opt/python@3/libexec/bin"
+#export PATH="$PATH:/usr/local/opt/python@3/libexec/bin"
 
 # tmuxp binaries
 # export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # go
 export GOPATH=$HOME/go
@@ -28,16 +32,16 @@ export PATH=$GEM_HOME/bin:$PATH
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # gcloud
-if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" ]]; then
-export PATH="$PATH:$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
-fi
+# if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" ]]; then
+# export PATH="$PATH:$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
+# fi
 
-# jenv
-if [[ -d "$HOME/.jenv/bin" ]]; then
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export JAVA_HOME="$(jenv prefix)"
-fi
+# # jenv
+# if [[ -d "$HOME/.jenv/bin" ]]; then
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+# export JAVA_HOME="$(jenv prefix)"
+# fi
 
 # nvm
 if [[ -d "$HOME/.nvm" ]]; then
@@ -52,3 +56,15 @@ export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 #export EDITOR=nvim
 
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# java
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/usr/local/opt/openjdk/bin:$PATH" # path does not exist
+# export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+# postgresql
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"

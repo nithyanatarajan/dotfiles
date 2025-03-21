@@ -32,3 +32,13 @@
   description = "order pod by time"
   command = "kubectl get pods --sort-by=.metadata.creationTimestamp"
   output = ""
+
+[[snippets]]
+  description = "start colima"
+  command = "colima start --network-address --cpu 4 --vm-type qemu --memory 8"
+  output = ""
+
+[[snippets]]
+  description = "stop docker containers"
+  command = "docker stop $(docker ps -q)"
+  output = ""

@@ -22,3 +22,9 @@ bind -x '"\C-x\C-r": pet-select'
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 #shopt -s histappend                      # when shell exists, append to history file, don't overwrite it
+
+eval "$(fzf --bash)"
+
+eval "$(direnv hook bash)"
+
+. "$HOME/.local/bin/env"

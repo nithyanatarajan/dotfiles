@@ -5,3 +5,6 @@
 
 # Load profile
 [ -f ~/.profile ] && source ~/.profile
+
+eval "$(fzf --zsh)"
+eval "$(direnv hook zsh)"

@@ -1,7 +1,7 @@
 .PHONY: all
 all: help
 
-IGNORE_LIST=-E homebrew -E iterm -E tmux -E tmux_local -E tmuxp -E ssh
+IGNORE_LIST=-E homebrew -E iterm -E tmux -E tmux_local -E tmuxp -E ssh -E fzf
 IGNORE_EXTN=--ignore=".tmpl"
 
 help: ## Prints help for targets with comments

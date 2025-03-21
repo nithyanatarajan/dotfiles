@@ -31,3 +31,11 @@ function jdkset {
     export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
     java -version
 }
+
+function act-venv {
+    source .venv/bin/activate
+}
+
+function deact {
+    deactivate
+}

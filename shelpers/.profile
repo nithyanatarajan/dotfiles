@@ -9,3 +9,5 @@
 
 # Load functions
 [ -f ~/.projectrc ] && source ~/.projectrc
+
+. "$HOME/.local/bin/env"

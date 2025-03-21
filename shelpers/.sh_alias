@@ -10,3 +10,8 @@ alias cat=bat
 alias tf=terraform
 alias ls='ls -G'
 alias ga='ls | xargs -I{} git -C {}'
+alias goland='/Applications/GoLand.app/Contents/MacOS/goland &'
+alias idea='/Applications/IntelliJ\ IDEA\ 2025.1\ EAP.app/Contents/MacOS/idea &'
+alias sops='EDITOR="code --wait" sops'
+alias python='python3'
+alias pip='pip3'
