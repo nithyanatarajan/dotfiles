@@ -19,7 +19,7 @@ update: ## Re-wireup all dotfiles using stow
 	@echo "🚀🚀🚀 Successfully relinked all the dot-files, enjoy 👏👏👏"
 
 tmuxc: ## Configure tmux
-	pip3 install --user tmuxp
+	brew install tmuxp
 	stow --dir=tmux --target=${HOME} --verbose --ignore=".git[^\s]+" --ignore=".local" .tmux
 	stow --verbose tmux_local
 
