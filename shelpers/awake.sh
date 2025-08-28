@@ -1,0 +1,2 @@
+caffeinate -id &
+disown
