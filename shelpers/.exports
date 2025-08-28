@@ -20,9 +20,9 @@ alias emulator=${ANDROID_HOME}/emulator/emulator
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # go
+export GOROOT=$(brew --prefix go)/libexec
 export GOPATH=$HOME/go
-export GOROOT=/opt/homebrew/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
 
 # gem
 export GEM_HOME=$HOME/.gem
@@ -68,3 +68,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 # postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# docker
+export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock

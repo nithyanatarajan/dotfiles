@@ -1,5 +1,5 @@
-set mainfont {{Lucida Grande} 9}
-set textfont {Monaco 9}
+set mainfont {{Lucida Grande} 13}
+set textfont {Monaco 13}
 set uifont {{Lucida Grande} 9 bold}
 set tabstop 8
 set findmergefiles 0
@@ -7,6 +7,8 @@ set maxgraphpct 50
 set maxwidth 16
 set cmitmode patch
 set wrapcomment none
+set wrapdefault none
+set autocopy 0
 set autoselect 1
 set autosellen 40
 set showneartags 1
@@ -53,7 +55,7 @@ set linkfgcolor blue
 set circleoutlinecolor black
 set diffbgcolors {"#fff3f3" "#f0fff0"}
 set web_browser open
-set geometry(main) 1920x1027+0+25
+set geometry(main) 1920x1027+5+25
 set geometry(state) zoomed
 set geometry(topwidth) 1918
 set geometry(topheight) 447
