@@ -35,7 +35,7 @@
 
 [[snippets]]
   description = "start colima"
-  command = "colima start --network-address --cpu 4 --vm-type qemu --memory 8"
+  command = "colima start --network-address --cpu 4 --memory 8 #--vm-type qemu"
   output = ""
 
 [[snippets]]

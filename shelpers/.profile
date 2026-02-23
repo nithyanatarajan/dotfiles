@@ -7,7 +7,7 @@
 # Load functions
 [ -f ~/.sh_functions ] && source ~/.sh_functions
 
-# Load functions
+# Load project specific configurations
 [ -f ~/.projectrc ] && source ~/.projectrc
 
 . "$HOME/.local/bin/env"
