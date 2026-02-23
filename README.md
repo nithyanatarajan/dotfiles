@@ -32,6 +32,19 @@ Repository to hold my Mac OS X configurations.
    $make install
    ```
 
+1. Configure git
+
+   ```shell
+   # Copy the template and fill in the placeholders
+   $cp git/.gitconfig.tmpl ~/.gitconfig
+   # Replace $GPGKey with your GPG signing key (use `gpg --list-secret-keys`)
+   # Replace $PROJECT_GIT with your project git host path (e.g. gitlab.com/org)
+
+   # For project-specific git config (e.g. different email for work repos)
+   $cp git/.gitconfig.proj.tmpl ~/Projects/$PROJECT_GIT/.gitconfig
+   # Replace $PROJECT_EMAIL with your work email
+   ```
+
 1. Configure iterm2
 
    1. Refer [here](https://stackoverflow.com/a/23356086) (or)
@@ -48,5 +61,23 @@ Repository to hold my Mac OS X configurations.
 1. Other apps
    1. [meeter](https://trymeeter.com/)
    2. [clocker](https://github.com/n0shake/Clocker)
-   3. [hidden bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
-   4. [fanny](https://github.com/DanielStormApps/Fanny)
+   3. [fanny](https://github.com/DanielStormApps/Fanny)
+
+## Appendix
+
+### Brewfile
+
+The `Brewfile` is managed via [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle).
+
+- **Dump current state**: `brew bundle dump --file=homebrew/Brewfile --force`
+- **Restore on a new machine**: `make brew` (or `brew bundle install --file=homebrew/Brewfile`)
+
+`brew bundle dump` captures not just brew packages but also vscode extensions and go packages. `brew bundle install` restores them by delegating to the appropriate tool:
+
+| Prefix | Runs |
+|--------|------|
+| `tap` | `brew tap <name>` |
+| `brew` | `brew install <name>` |
+| `cask` | `brew install --cask <name>` |
+| `vscode` | `code --install-extension <name>` |
+| `go` | `go install <name>@latest` |

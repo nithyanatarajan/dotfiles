@@ -9,7 +9,6 @@
 [includeIf "gitdir:~/Projects/$PROJECT_GIT/"]
 	path = ~/Projects/$PROJECT_GIT/.gitconfig
 [init]
-	templatedir = ~/.git-template
 	defaultBranch = master
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -18,3 +17,5 @@
 	required = true
 [pull]
 	rebase = true
+[merge]
+	conflictStyle = zdiff3
