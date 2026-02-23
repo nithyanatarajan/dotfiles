@@ -1,37 +1,11 @@
-# Usage: use nvm
+# Custom direnv layouts and functions
+# https://direnv.net/man/direnv-stdlib.1.html
 #
-# Loads the specified node version into the environment
+# Usage: Add `use <function_name>` or `layout <function_name>` in .envrc
 #
-use_nvm() {
-  source /usr/local/opt/nvm/nvm.sh
-  nvm use
-}
-
-layout_anaconda() {
-  # Load Conda's shell functions
-  if [ -f "$(conda info --base)/etc/profile.d/conda.sh" ]; then
-      source "$(conda info --base)/etc/profile.d/conda.sh"
-  else
-      echo "Conda initialization script not found. Please run 'conda init'." >&2
-      exit 1
-  fi
-
-  if [ -n "$1" ]; then
-      # Activate the environment explicitly provided as argument
-      local env_name="$1"
-      conda activate "$env_name"
-      echo "Activating conda environment: $env_name"
-  elif (grep -q "name:" environment.yml); then
-      # Detect environment name from environment.yml file
-      local env_name
-      env_name=$(grep "name:" environment.yml | sed -e 's/name: //' | cut -d "'" -f 2 || cut -d '"' -f 2)
-      conda activate "$env_name"
-      echo "Activating conda environment: $env_name"
-  else
-      echo "No environment specified" >&2
-      conda activate base
-      echo "Activating conda environment: base"
-  fi
-
-  conda info --env
-}
+# Example:
+# use_node() {
+#   source /opt/homebrew/opt/nvm/nvm.sh
+#   nvm use
+# }
+# Then in .envrc: `use node`

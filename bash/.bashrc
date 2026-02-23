@@ -2,11 +2,6 @@
 
 # starship configuration
 eval "$(starship init bash)"
-# Setup direnv
-eval "$(direnv hook bash)"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-complete -C /usr/local/bin/vault vault
 
 function pet-select() {
   BUFFER=$(pet search --query "$READLINE_LINE")
@@ -26,5 +21,7 @@ export HISTFILESIZE=100000               # big big history
 eval "$(fzf --bash)"
 
 eval "$(direnv hook bash)"
+
+[ -f ~/.secrets ] && source ~/.secrets
 
 . "$HOME/.local/bin/env"

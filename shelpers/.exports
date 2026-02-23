@@ -9,13 +9,6 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias emulator=${ANDROID_HOME}/emulator/emulator
 
-#python3
-#export PATH="$PATH:/usr/local/opt/python@3/libexec/bin"
-
-# tmuxp binaries
-# export PATH="$PATH:$HOME/Library/Python/3.9/bin"
-
-
 # ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
@@ -29,12 +22,7 @@ export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
 # sqlite
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
-# gcloud
-# if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" ]]; then
-# export PATH="$PATH:$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
-# fi
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # # jenv
 # if [[ -d "$HOME/.jenv/bin" ]]; then
@@ -43,31 +31,32 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 # export JAVA_HOME="$(jenv prefix)"
 # fi
 
-# nvm
-if [[ -d "$HOME/.nvm" ]]; then
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
-fi
-
 # docker-machine
 # eval $(docker-machine env default)
 
-export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 #export EDITOR=nvim
-
-export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # java
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-# export PATH="/usr/local/opt/openjdk/bin:$PATH" # path does not exist
-# export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
 # docker
 export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+
+#mysql-client
+export PATH="/opt/homebrew/opt/mysql-client@8.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
+# libpq
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
