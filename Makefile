@@ -8,7 +8,7 @@ help: ## Prints help for targets with comments
 	@grep -E '^[a-zA-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 brew: ## Install brew packages
-	cd homebrew && brew bundle install
+	cd homebrew && brew bundle install --verbose
 
 install: ## Wireup all dotfiles using stow
 	fd --type d . --max-depth 1 $(IGNORE_LIST) | xargs -I {} stow $(IGNORE_EXTN) --verbose {}
