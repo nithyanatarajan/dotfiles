@@ -38,10 +38,9 @@ export GPG_TTY=$(tty)
 #export EDITOR=nvim
 
 # java
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
-# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_HOME=$(/usr/libexec/java_home -v 25)
 
 # postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
