@@ -24,6 +24,13 @@ Repository to hold my Mac OS X configurations.
    $make brew
    ```
 
+1. Review brew caveats and follow any post-install steps (e.g. symlinks for openjdk, libpq)
+
+   ```shell
+   $brew info openjdk
+   $brew info libpq
+   ```
+
 1. To link all dotfiles
 
    ```shell

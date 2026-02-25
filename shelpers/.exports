@@ -40,7 +40,7 @@ export GPG_TTY=$(tty)
 # java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export JAVA_HOME=$(/usr/libexec/java_home -v 25)
+export JAVA_HOME=$(/usr/libexec/java_home -v 25 2>/dev/null)
 
 # postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
