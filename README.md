@@ -70,6 +70,13 @@ Repository to hold my Mac OS X configurations.
    2. [clocker](https://github.com/n0shake/Clocker)
    3. [fanny](https://github.com/DanielStormApps/Fanny)
 
+### Troubleshooting
+
+- **Cask apps not opening** (e.g. Hidden Bar): Remove quarantine attribute
+  ```shell
+  $xattr -d com.apple.quarantine /Applications/<App>.app
+  ```
+
 ## Appendix
 
 ### Brewfile
