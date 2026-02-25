@@ -24,4 +24,4 @@ eval "$(direnv hook bash)"
 
 [ -f ~/.secrets ] && source ~/.secrets
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"

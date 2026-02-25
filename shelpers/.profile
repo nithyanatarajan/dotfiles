@@ -10,4 +10,4 @@
 # Load project specific configurations
 [ -f ~/.projectrc ] && source ~/.projectrc
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
