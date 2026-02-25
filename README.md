@@ -10,12 +10,10 @@ Repository to hold my Mac OS X configurations.
     ```
 1. Install [brew](https://brew.sh/)
 
-1. Configure ssh keys and gpg keys
-
 1. Clone this repo to `$HOME`
 
    ```shell
-   $git clone git@github.com:nithyanatarajan/dotfiles.git ${HOME}/dotfiles
+   $git clone https://github.com/nithyanatarajan/dotfiles.git ${HOME}/dotfiles
    ```
 
 ## Usage
@@ -30,6 +28,17 @@ Repository to hold my Mac OS X configurations.
 
    ```shell
    $make install
+   ```
+
+1. Configure [ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [gpg keys](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+
+   ```shell
+   # Generate GPG key
+   $gpg --full-generate-key
+   # List keys to get the signing key ID
+   $gpg --list-secret-keys --keyid-format=long
+   # Export public key (add this to GitHub/GitLab)
+   $gpg --armor --export <key-id>
    ```
 
 1. Configure git
@@ -69,8 +78,13 @@ Repository to hold my Mac OS X configurations.
 
 The `Brewfile` is managed via [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle).
 
+- **Install essentials**: `make brew`
+- **Install optional packages** (flutter, older JDKs, etc.): `make brew-optional`
 - **Dump current state**: `brew bundle dump --file=homebrew/Brewfile --force`
-- **Restore on a new machine**: `make brew` (or `brew bundle install --file=homebrew/Brewfile`)
+- **Remove packages not in Brewfile**: `brew bundle cleanup --file=homebrew/Brewfile`
+- **Remove packages not in either Brewfile**: `cat homebrew/Brewfile homebrew/Brewfile.optional | brew bundle cleanup --file=/dev/stdin`
+
+> **Note**: `brew bundle cleanup` will flag optional packages for removal if run against the main Brewfile only. Add `--force` to actually remove. Without it, only previews what would be removed.
 
 `brew bundle dump` captures not just brew packages but also vscode extensions and go packages. `brew bundle install` restores them by delegating to the appropriate tool:
 

@@ -10,6 +10,9 @@ help: ## Prints help for targets with comments
 brew: ## Install brew packages
 	cd homebrew && brew bundle install --verbose
 
+brew-optional: ## Install optional brew packages
+	cd homebrew && brew bundle install --verbose --file=Brewfile.optional
+
 install: ## Wireup all dotfiles using stow
 	fd --type d . --max-depth 1 $(IGNORE_LIST) | xargs -I {} stow $(IGNORE_EXTN) --verbose {}
 	@echo "🚀🚀🚀 Successfully linked all the dot-files, enjoy 👏👏👏"
