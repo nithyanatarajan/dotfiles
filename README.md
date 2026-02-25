@@ -32,21 +32,12 @@ Repository to hold my Mac OS X configurations.
 
 1. Configure [ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [gpg keys](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
 
-   ```shell
-   # Generate GPG key
-   $gpg --full-generate-key
-   # List keys to get the signing key ID
-   $gpg --list-secret-keys --keyid-format=long
-   # Export public key (add this to GitHub/GitLab)
-   $gpg --armor --export <key-id>
-   ```
-
 1. Configure git
 
    ```shell
    # Copy the template and fill in the placeholders
    $cp git/.gitconfig.tmpl ~/.gitconfig
-   # Replace $GPGKey with your GPG signing key (use `gpg --list-secret-keys`)
+   # Replace $GPGKey with your GPG signing key (use `gpg --list-secret-keys --keyid-format=long`)
    # Replace $PROJECT_GIT with your project git host path (e.g. gitlab.com/org)
 
    # For project-specific git config (e.g. different email for work repos)
